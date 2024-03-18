@@ -36,8 +36,13 @@ with open(inputF, 'r') as file:
                 else:
                     word_Count[word] = 1
 
+    file.close()
+    
 word_Count = {key: word_Count[key] for key in sorted(word_Count)}
 
 with open(outputF, 'w') as oFile:
     for word, count in word_Count.items():
         oFile.write(f"{word} {count}\n")
+    oFile.close()
+    
+
